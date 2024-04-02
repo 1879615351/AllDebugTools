@@ -107,7 +107,7 @@ impl MqttClient{
                         match  event{
                             Ok(event) =>{
                                 if first_connect == false{
-                                    self.tx.send("connect_success".to_string());
+                                    self.tx.send("ok".to_string());
                                     first_connect = true;
                                 }
                                 match event{
@@ -120,7 +120,7 @@ impl MqttClient{
                             },
                             Err(error)=>{
                                 println!("链接断开");
-                                self.tx.send("connect_error".to_string());
+                                self.tx.send("error".to_string());
                                 break;
                                 // match error{
                                 //     ConnectionError::MqttState(state) =>{

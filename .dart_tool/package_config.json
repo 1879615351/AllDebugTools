@@ -50,10 +50,28 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/csslib-0.17.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "diffutil_dart",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/diffutil_dart-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/equatable-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
@@ -80,16 +98,58 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_chat_types",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_chat_types-3.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "flutter_chat_ui",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_chat_ui-1.6.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "flutter_custom_selector",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_custom_selector-0.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "flutter_driver",
       "rootUri": "file:///home/yansu/packages/flutter/packages/flutter_driver",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_link_previewer",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_link_previewer-3.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "flutter_linkify",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_linkify-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_lints-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_parsed_text",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_parsed_text-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_reorderable_grid_view",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/flutter_reorderable_grid_view-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
     },
     {
       "name": "flutter_rust_bridge",
@@ -104,10 +164,40 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///home/yansu/packages/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "fuchsia_remote_debug_protocol",
       "rootUri": "file:///home/yansu/packages/flutter/packages/fuchsia_remote_debug_protocol",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/get-4.6.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/html-0.15.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/http-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "integration_test",
@@ -128,6 +218,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "json_annotation",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/json_annotation-4.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/leak_tracker-10.0.0",
       "packageUri": "lib/",
@@ -144,6 +240,12 @@
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/leak_tracker_testing-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
+    },
+    {
+      "name": "linkify",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/linkify-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "lints",
@@ -176,6 +278,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "photo_view",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/photo_view-0.14.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/platform-3.1.4",
       "packageUri": "lib/",
@@ -198,6 +306,12 @@
       "rootUri": "../rust_builder",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "scroll_to_index",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/scroll_to_index-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "sky_engine",
@@ -248,16 +362,82 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "url_launcher",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher-6.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_linux-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_macos-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_web-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
+      "name": "visibility_detector",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/visibility_detector-0.4.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vm_service",
       "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/vm_service-13.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "web",
+      "rootUri": "file:///home/yansu/.pub-cache/hosted/pub.dev/web-0.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "webdriver",
@@ -272,7 +452,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-03-25T13:46:19.725742Z",
+  "generated": "2024-04-02T01:20:04.475293Z",
   "generator": "pub",
   "generatorVersion": "3.3.0"
 }

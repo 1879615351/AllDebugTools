@@ -1,3 +1,10 @@
 # This is a generated file; do not edit or check into version control.
 integration_test=/home/yansu/packages/flutter/packages/integration_test/
-rust_lib_my_app=/home/yansu/projectspace/test/AllDebugTools/rust_builder/
+rust_lib_my_app=/home/yansu/projectspace/AllDebugTools/rust_builder/
+url_launcher=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher-6.2.5/
+url_launcher_android=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.0/
+url_launcher_ios=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.5/
+url_launcher_linux=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_linux-3.1.1/
+url_launcher_macos=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_macos-3.1.0/
+url_launcher_web=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_web-2.3.0/
+url_launcher_windows=/home/yansu/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.1/
