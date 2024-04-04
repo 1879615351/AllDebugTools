@@ -3,6 +3,7 @@ import 'package:get/get_rx/get_rx.dart';
 import 'package:my_app/src/rust/api/simple.dart';
 import 'package:my_app/src/rust/api/mqtt.dart';
 import 'package:my_app/src/rust/frb_generated.dart';
+import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'dart:async';
 
 class MqttClientControler extends GetxController {
@@ -11,6 +12,7 @@ class MqttClientControler extends GetxController {
   late Rx<StreamSubscription<String>> _dataSubscription;
   late Rx<StreamSubscription<String>> _state_monitor;
   RxList<String> m_msg = [""].obs;
+  RxList<types.Message> messages = <types.Message>[].obs;
   RxString m_state_msg = "".obs;
   RxBool is_connected = false.obs;
   void connectMqttServer(

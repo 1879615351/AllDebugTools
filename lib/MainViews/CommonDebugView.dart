@@ -5,6 +5,7 @@ import 'package:flutter_reorderable_grid_view/entities/order_update_entity.dart'
 import 'package:flutter_reorderable_grid_view/widgets/widgets.dart';
 import 'package:my_app/MainPages.dart';
 import 'package:my_app/pages/MqttClientPage.dart';
+import 'package:my_app/controlers/MqttClientControler.dart';
 
 class CommonDebugView extends StatefulWidget {
   final bool? smallScreenMode;
@@ -22,28 +23,103 @@ enum CommonDebugMode {
   HTTP
 }
 
-class _CommonDebugViewState extends State<CommonDebugView> {
+class CommonPanelKeeper {
+  late GetxController controller;
+  late Key key;
+  late CommonDebugMode mode;
+  CommonPanelKeeper(
+      {required this.controller, required this.key, required this.mode});
+}
+
+class _CommonDebugViewState extends State<CommonDebugView>
+    with AutomaticKeepAliveClientMixin {
   final _scrollController = ScrollController(initialScrollOffset: 10);
   final _gridViewKey = GlobalKey();
-  var _pages = <CommonDebugMode>[];
+  List<CommonPanelKeeper> page_keeper = <CommonPanelKeeper>[];
+  void _handleDragStarted() {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    const snackBar = SnackBar(
+      content: Text('Dragging has started!'),
+      duration: Duration(milliseconds: 1000),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void _handleDragEnd() {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    const snackBar = SnackBar(
+      content: Text('Dragging was finished!'),
+      duration: Duration(milliseconds: 1000),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
+  void add_pages(CommonDebugMode mode) {
+    var key = UniqueKey();
+    GetxController controller = switch (mode) {
+      CommonDebugMode.MQTT_CLIENT => MqttClientControler(),
+      CommonDebugMode.MQTT_SERVER => MqttClientControler(),
+      CommonDebugMode.TCP_SERVER => MqttClientControler(),
+      CommonDebugMode.TCP_CLIENT => MqttClientControler(),
+      CommonDebugMode.UDP => MqttClientControler(),
+      CommonDebugMode.HTTP => MqttClientControler(),
+    };
+    CommonPanelKeeper keeper =
+        CommonPanelKeeper(controller: controller, key: key, mode: mode);
+    page_keeper.add(keeper);
+  }
+
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext contex) {
+    debugPrint('build called');
+    //add_pages(CommonDebugMode.TCP_CLIENT);
+    //add_pages(CommonDebugMode.UDP);
     var generatedChildren = List.generate(
       // 创造Grid成员
-      _pages.length,
-      (index) => Container(
-          key: Key(_pages.elementAt(index).toString()),
-          child: switch (_pages[index]) {
-            CommonDebugMode.MQTT_CLIENT => MqttClientPage(),
-            CommonDebugMode.MQTT_SERVER => MqttClientPage(),
-            CommonDebugMode.TCP_SERVER => MqttClientPage(),
-            CommonDebugMode.TCP_CLIENT => MqttClientPage(),
-            CommonDebugMode.UDP => MqttClientPage(),
-            CommonDebugMode.HTTP => MqttClientPage(),
+      page_keeper.length,
+      (index) => Center(
+          key: page_keeper[index].key,
+          child: switch (page_keeper[index].mode) {
+            CommonDebugMode.MQTT_CLIENT => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
+            CommonDebugMode.MQTT_SERVER => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
+            CommonDebugMode.TCP_SERVER => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
+            CommonDebugMode.TCP_CLIENT => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
+            CommonDebugMode.UDP => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
+            CommonDebugMode.HTTP => MqttClientPage(
+                is_inner: false,
+                myController:
+                    page_keeper[index].controller as MqttClientControler,
+                key: page_keeper[index].key,
+              ),
           }),
     );
-    // final double _width = contex.width;
-    // final double _height = contex.height;
     return Scaffold(
       body: Center(
         child: ReorderableBuilder(
@@ -52,18 +128,21 @@ class _CommonDebugViewState extends State<CommonDebugView> {
           onReorder: (List<OrderUpdateEntity> orderUpdateEntities) {
             setState(() {
               for (final orderUpdateEntity in orderUpdateEntities) {
-                final fruit = _pages.removeAt(orderUpdateEntity.oldIndex);
-                _pages.insert(orderUpdateEntity.newIndex, fruit);
+                final page = page_keeper.removeAt(orderUpdateEntity.oldIndex);
+                page_keeper.insert(orderUpdateEntity.newIndex, page);
               }
             });
           },
+          //enableDraggable: false,
+          onDragStarted: _handleDragStarted,
+          onDragEnd: _handleDragEnd,
           builder: (children) {
             return GridView(
               key: _gridViewKey,
               controller: _scrollController,
               children: children,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
+                crossAxisCount: 2,
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 8,
               ),
@@ -74,7 +153,7 @@ class _CommonDebugViewState extends State<CommonDebugView> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () =>
-            {setState(() => _pages.add(CommonDebugMode.MQTT_CLIENT))},
+            {setState(() => add_pages(CommonDebugMode.MQTT_CLIENT))},
       ),
     );
   }
