@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:my_app/controlers/MqttClientControler.dart';
@@ -8,6 +9,9 @@ import 'package:my_app/src/rust/frb_generated.dart';
 import 'dart:async';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:uuid/uuid.dart';
+
+var uuid = Uuid();
 
 class FloatingActionButtonLocationTopStart
     extends FloatingActionButtonLocation {
@@ -45,9 +49,8 @@ class MqttClientState extends State<MqttClientPage>
   String id = "1";
   String host = "127.0.0.1";
   int port = 1883;
-  final _viewKey = GlobalKey();
+  //final _viewKey = GlobalKey();
   //MqttClientState({required this.is_inner, this.myController});
-
   @override
   bool get wantKeepAlive => true;
   @override
@@ -73,7 +76,7 @@ class MqttClientState extends State<MqttClientPage>
     final textMessage = types.TextMessage(
       author: _user,
       createdAt: DateTime.now().millisecondsSinceEpoch,
-      id: '1',
+      id: uuid.v4(), //这个ID必须唯一，不然后面Chat内部渲染会出问题
       text: message.text,
     );
     _addMessage(textMessage);
@@ -89,9 +92,6 @@ class MqttClientState extends State<MqttClientPage>
 
   Future<void> navigateAndGetResult() async {
     final result = await Get.to(() => getOrCreateInnerWidget());
-    // 处理返回结果，如果需要的话
-    print("返回的结果是: $result");
-    // 你可以在这里根据返回的结果来更新UI或状态
     setState(() {}); //等待页面返回后更新前页面
   }
 
@@ -105,45 +105,38 @@ class MqttClientState extends State<MqttClientPage>
 
   @override
   Widget build(BuildContext context) {
-    //已解决从内部大页面切换回来不刷新消息的问题 => 异步await等待页面返回后更新前页面
-    //TODO: Chat 需要添加UniqueKey()来进行每次build都重新刷新，不然添加消息多几个会寄
-    //TODO:添加消息过多时，溢出显示区域会崩溃
-    debugPrint('build mqttClientPage');
+    //debugPrint('build mqttClientPage');
+    Widget container = Row(
+      children: <Widget>[
+        Expanded(
+          child: Chat(
+            messages: widget.myController!.messages,
+            onAttachmentPressed: null,
+            onMessageTap: null,
+            onPreviewDataFetched: null,
+            onSendPressed: _handleSendPressed,
+            showUserAvatars: false,
+            showUserNames: false,
+            user: _user,
+            theme: const DefaultChatTheme(
+              seenIcon: Text(
+                'read',
+                style: TextStyle(
+                  fontSize: 10.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        Expanded(
+            child: Container(
+          color: Colors.lightGreenAccent,
+        ))
+      ],
+    );
     return widget.is_inner
         ? Scaffold(
-            body: Row(
-              children: <Widget>[
-                Expanded(
-                    child: Column(
-                  children: <Widget>[
-                    Expanded(
-                        child: Chat(
-                      key: UniqueKey(), //每次build都更新
-                      messages: widget.myController!.messages,
-                      onAttachmentPressed: null,
-                      onMessageTap: null,
-                      onPreviewDataFetched: null,
-                      onSendPressed: _handleSendPressed,
-                      showUserAvatars: true,
-                      showUserNames: true,
-                      user: _user,
-                      theme: const DefaultChatTheme(
-                        seenIcon: Text(
-                          'read',
-                          style: TextStyle(
-                            fontSize: 10.0,
-                          ),
-                        ),
-                      ),
-                    ))
-                  ],
-                )),
-                Expanded(
-                    child: Container(
-                  color: Colors.lightGreen,
-                ))
-              ],
-            ),
+            body: container,
             floatingActionButton: FloatingActionButton(
               onPressed: () => {
                 setState(
@@ -167,39 +160,7 @@ class MqttClientState extends State<MqttClientPage>
             },
             child: Container(
               //alignment: Alignment(0, 0),
-              child: Row(
-                //水平布局
-                children: <Widget>[
-                  Expanded(
-                    //左边是显示消息和发送消息
-                    child: Chat(
-                      useTopSafeAreaInset: true,
-                      key: UniqueKey(), //每次build都更新
-                      messages: widget.myController!.messages,
-                      onAttachmentPressed: null,
-                      onMessageTap: null,
-                      onPreviewDataFetched: null,
-                      onSendPressed: _handleSendPressed,
-                      showUserAvatars: false,
-                      showUserNames: false,
-                      user: _user,
-                      theme: const DefaultChatTheme(
-                        seenIcon: Text(
-                          'read',
-                          style: TextStyle(
-                            fontSize: 10.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                      //右边是一些设置
-                      child: Container(
-                    color: Colors.deepPurpleAccent,
-                  ))
-                ],
-              ),
+              child: container,
               //child: Obx(() => Text(myController!.name[0])),
             ),
           );

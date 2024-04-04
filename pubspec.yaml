@@ -43,6 +43,7 @@ dependencies:
   flutter_custom_selector: ^0.0.3
   flutter_reorderable_grid_view: ^4.0.0
   flutter_chat_ui: ^1.6.12
+  uuid: ^4.3.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

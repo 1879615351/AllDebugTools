@@ -30,6 +30,10 @@ collection
 2.18
 file:///home/yansu/.pub-cache/hosted/pub.dev/collection-1.18.0/
 file:///home/yansu/.pub-cache/hosted/pub.dev/collection-1.18.0/lib/
+crypto
+2.19
+file:///home/yansu/.pub-cache/hosted/pub.dev/crypto-3.0.3/
+file:///home/yansu/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib/
 csslib
 2.19
 file:///home/yansu/.pub-cache/hosted/pub.dev/csslib-0.17.3/
@@ -54,6 +58,10 @@ file
 3.0
 file:///home/yansu/.pub-cache/hosted/pub.dev/file-7.0.0/
 file:///home/yansu/.pub-cache/hosted/pub.dev/file-7.0.0/lib/
+fixnum
+2.19
+file:///home/yansu/.pub-cache/hosted/pub.dev/fixnum-1.1.0/
+file:///home/yansu/.pub-cache/hosted/pub.dev/fixnum-1.1.0/lib/
 floating_tabbar
 2.16
 file:///home/yansu/.pub-cache/hosted/pub.dev/floating_tabbar-1.0.2/
@@ -182,6 +190,10 @@ source_span
 2.18
 file:///home/yansu/.pub-cache/hosted/pub.dev/source_span-1.10.0/
 file:///home/yansu/.pub-cache/hosted/pub.dev/source_span-1.10.0/lib/
+sprintf
+2.12
+file:///home/yansu/.pub-cache/hosted/pub.dev/sprintf-7.0.0/
+file:///home/yansu/.pub-cache/hosted/pub.dev/sprintf-7.0.0/lib/
 stack_trace
 2.18
 file:///home/yansu/.pub-cache/hosted/pub.dev/stack_trace-1.11.1/
@@ -242,6 +254,10 @@ url_launcher_windows
 3.0
 file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.1/
 file:///home/yansu/.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.1/lib/
+uuid
+3.0
+file:///home/yansu/.pub-cache/hosted/pub.dev/uuid-4.3.3/
+file:///home/yansu/.pub-cache/hosted/pub.dev/uuid-4.3.3/lib/
 vector_math
 2.14
 file:///home/yansu/.pub-cache/hosted/pub.dev/vector_math-2.1.4/
